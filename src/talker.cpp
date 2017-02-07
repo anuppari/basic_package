@@ -10,7 +10,7 @@ int main(int argc, char **argv)
     
     ros::Publisher pub = nh.advertise<std_msgs::String>("test1",10);
     
-    ros::Rate r(1000);
+    ros::Rate r(10000);
     std_msgs::String msg;
     msg.data = std::string("hello");
     while(ros::ok())

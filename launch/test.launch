@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+    <node name="talker1" pkg="basic_package" type="talker" output="screen" />
+    <node if="false" name="talker2" pkg="basic_package" type="talker" output="screen" >
+        <remap from="test1" to="test3" />
+    </node>
+    <node name="listener1" pkg="basic_package" type="listener" output="screen" />
+    <node if="false" name="listener2" pkg="basic_package" type="listener" output="screen" >
+        <remap from="test1" to="test3" />
+        <remap from="test2" to="test4" />
+    </node>
+</launch>
