@@ -1,5 +1,6 @@
 #include "ros/ros.h"
-#include "std_msgs/String.h"
+#include <std_msgs/String.h>
+#include <gazebo_msgs/LinkStates.h>
 
 #include <string>
 
@@ -14,11 +15,9 @@ public:
         pub = nh.advertise<std_msgs::String>("test2",10);
     }
     
-    void callback(const std_msgs::StringConstPtr& msg)
+    void callback(const gazebo_msgs::LinkStates& msg)
     {
-        std_msgs::String newMsg;
-        newMsg.data = msg->data;
-        pub.publish(newMsg);
+        pub.publish(std_msgs::String());
     }
 };
 
